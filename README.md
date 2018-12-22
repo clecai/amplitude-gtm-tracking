@@ -20,8 +20,8 @@ In the world of Product Management, agility is much preached concept. We want ou
 We want to build a tracking system that's above all passing trends and hot new tools. In our work we aim for agnosticity from products and solutions. Google Tag Manager and Amplitude appeared as the best joint solutions when we first designed our process but we want to remain free to migrate to whatever new tool the market offer us. When thinking about tracking, our hands should never be tied by the choices we made historically.
 
 ## About this repository
-*The remainder of this documentation assumes you are somewhat familiar with Google Tag Manager (GTM) and Amplitude. If you are feeling iffy with GTM, I suggest you go ahead and watch the great video trainings of MeasureSchool on YouTube (https://www.youtube.com/channel/UClgihdkPzNDtuoQy4xDw5mA). 
-Before you start implementing, you should feel comfortable with the dataLayer and the sequences of events happening when a webpage is loaded (pageview, DOM ready, window loaded).*
+*The remainder of this documentation assumes you are somewhat familiar with Google Tag Manager (GTM) and Amplitude. If you are feeling iffy with GTM, I suggest you go ahead and watch the great video trainings of [MeasureSchool on YouTube](https://www.youtube.com/channel/UClgihdkPzNDtuoQy4xDw5mA). 
+Before you start your implementation, you should feel comfortable with the dataLayer and the sequences of events happening when a webpage is loaded (pageview, DOM ready, window loaded).*
 
 You can download *amplitude_gtm_tracking_container.json* and import it on GTM. It contains, by order of importance :
 - `Amplitude — SDK`, a tag that is executed on All Pages (at pageview) and loads the necessary functions for Amplitude to work. 
