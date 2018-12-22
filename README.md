@@ -1,5 +1,7 @@
 # amplitude-gtm-tracking
 
+Do you want to implement Amplitude using Google Tag Manager (GTM)? You have knocked at the right door.
+
 This repository contains json files and a few notes detailing the implementation of Amplitude tracking (https://amplitude.com/) through Google Tag Manager or GTM (https://tagmanager.google.com/) as I initially intended it for the company I work for, ManoMano (www.manomano.fr).
 
 ## Our approach to tracking
@@ -17,8 +19,23 @@ In the world of Product Management, agility is much preached concept. We want ou
 ### 4. Agnosticity:
 We want to build a tracking system that's above all passing trends and hot new tools. In our work we aim for agnosticity from products and solutions. Google Tag Manager and Amplitude appeared as the best joint solutions when we first designed our process but we want to remain free to migrate to whatever new tool the market offer us. When thinking about tracking, our hands should never be tied by the choices we made historically.
 
-## Using this repository
-foobar
+## About this repository
+*The remainder of this documentation assumes you are somewhat familiar with Google Tag Manager (GTM) and Amplitude. If you are feeling iffy with GTM, I suggest you go ahead and watch the great video trainings of MeasureSchool on YouTube (https://www.youtube.com/channel/UClgihdkPzNDtuoQy4xDw5mA). 
+Before you start implementing, you should feel comfortable with the dataLayer and the sequences of events happening when a webpage is loaded (pageview, DOM ready, window loaded).*
+
+You can download *amplitude_gtm_tracking_container.json* and import it on GTM. It contains, by order of importance :
+- `Amplitude — SDK`, a tag that is executed on All Pages (at pageview) and loads the necessary functions for Amplitude to 
+- `amplitude_project_id`, a lookup variable, which contains the ids of the Amplitude projects you will be sending data to.
+- `amplitude_event_properties`, a js object containing all the event variables that we will be sending to Amplitude.
+- `amplitude_user_properties`, a js object containing all the user variables that we will be sending to Amplitude.
+work.
+- `Amplitude - event - TEMPLATE`, a tag with no trigger, which you should copy each time you want to add a new event. It contains the code that is executed each time you collect an event and send it to Amplitude. Note how it ends with a property (`'amp_pageview_recorded:true'`) being sent to the dataLayer. We will come back to this.
+- `Amplitude - event - View page`, a tag triggered each time the window is loaded without the dataLayer containing the property `'amp_pageview_recorded:true'`.
+- 4 other `Amplitude - event` tags, which collect data at specific stages of a classic e-commerce funnel.
+- 18 variables starting with `DL_`, which are dataLayer variables.
+- 5 triggers defining the stages of a classic e-commerce funnel (both server-side and client-side triggers).
+
+
 
 ## How to track a new event
 foobar
