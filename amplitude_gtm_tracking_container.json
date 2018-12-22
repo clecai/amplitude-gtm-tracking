@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2018-12-22 17:08:39",
+    "exportTime": "2018-12-22 22:20:37",
     "containerVersion": {
         "path": "accounts/4611817526/containers/10693979/versions/0",
         "accountId": "4611817526",
@@ -15,7 +15,7 @@
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1545498276912",
+            "fingerprint": "1545515088589",
             "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/4611817526/containers/10693979/workspaces?apiLink=container"
         },
         "tag": [
@@ -115,6 +115,30 @@
             {
                 "accountId": "4611817526",
                 "containerId": "10693979",
+                "tagId": "6",
+                "name": "Amplitude - event - View category page",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    'View category page',\n    \n  // Event properties\n    {{amplitude_user_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1545517224756",
+                "firingTriggerId": [
+                    "7"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
                 "tagId": "3",
                 "name": "Amplitude - event - View page",
                 "type": "html",
@@ -133,6 +157,30 @@
                 "fingerprint": "1545497179484",
                 "firingTriggerId": [
                     "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "tagId": "7",
+                "name": "Amplitude - event - View product page",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    'View product page',\n    \n  // Event properties\n    {{amplitude_user_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1545515088589",
+                "firingTriggerId": [
+                    "6"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT"
             }
@@ -222,7 +270,7 @@
                 "accountId": "4611817526",
                 "containerId": "10693979",
                 "triggerId": "7",
-                "name": "home_page_domready",
+                "name": "category_page_domready",
                 "type": "DOM_READY",
                 "filter": [
                     {
@@ -236,12 +284,12 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "home"
+                                "value": "category"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1545496988500"
+                "fingerprint": "1545517220553"
             },
             {
                 "accountId": "4611817526",
