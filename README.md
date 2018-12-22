@@ -23,7 +23,7 @@ We want to build a tracking system that's above all passing trends and hot new t
 *The remainder of this documentation assumes you are somewhat familiar with Google Tag Manager (GTM) and Amplitude. If you are feeling iffy with GTM, I suggest you go ahead and watch the great video trainings of [MeasureSchool on YouTube](https://www.youtube.com/channel/UClgihdkPzNDtuoQy4xDw5mA). 
 Before you start your implementation, you should feel comfortable with the dataLayer and the sequences of events happening when a webpage is loaded (pageview, DOM ready, window loaded).*
 
-You can download *amplitude_gtm_tracking_container.json* and import it on GTM. It contains, by order of importance :
+You can download [*amplitude_gtm_tracking_container.json*](https://github.com/clecai/amplitude-gtm-tracking/blob/master/amplitude_gtm_tracking_container.json) and import it on GTM. It contains, by order of importance :
 - `Amplitude — SDK`, a tag that is executed on All Pages (at pageview) and loads the necessary functions for Amplitude to work. 
 - `amplitude_project_id`, a lookup variable, which contains the ids of the Amplitude projects we will be sending data to.
 - `amplitude_event_properties`, a js object containing all the event-related variables that we will be sending to Amplitude.
@@ -55,7 +55,4 @@ A picture is worth a thousand words
 ## Collecting all pageviews without double-counting them
 
 ## Monitoring and QA-ing your tracking
-foobar
-
-## About Google Tag Manager
 foobar
