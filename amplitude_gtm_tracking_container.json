@@ -1,0 +1,878 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2018-12-22 17:08:39",
+    "containerVersion": {
+        "path": "accounts/4611817526/containers/10693979/versions/0",
+        "accountId": "4611817526",
+        "containerId": "10693979",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/4611817526/containers/10693979",
+            "accountId": "4611817526",
+            "containerId": "10693979",
+            "name": "clecai.com",
+            "publicId": "GTM-5LQV28V",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1545498276912",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/4611817526/containers/10693979/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "tagId": "2",
+                "name": "Amplitude - SDK",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script type=\"text/javascript\">\n  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement(\"script\")\n  ;r.type=\"text/javascript\";r.async=true\n  ;r.src=\"https://cdn.amplitude.com/libs/amplitude-4.4.0-min.gz.js\"\n  ;r.onload=function(){if(e.amplitude.runQueuedFunctions){\n  e.amplitude.runQueuedFunctions()}else{\n  console.log(\"[Amplitude] Error: could not load SDK\")}}\n  ;var i=t.getElementsByTagName(\"script\")[0];i.parentNode.insertBefore(r,i)\n  ;function s(e,t){e.prototype[t]=function(){\n  this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}\n  var o=function(){this._q=[];return this}\n  ;var a=[\"add\",\"append\",\"clearAll\",\"prepend\",\"set\",\"setOnce\",\"unset\"]\n  ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]\n  ;return this}\n  ;var l=[\"setProductId\",\"setQuantity\",\"setPrice\",\"setRevenueType\",\"setEventProperties\"]\n  ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c\n  ;var d=[\"init\",\"logEvent\",\"logRevenue\",\"setUserId\",\"setUserProperties\",\"setOptOut\",\"setVersionName\",\"setDomain\",\"setDeviceId\",\"setGlobalUserProperties\",\"identify\",\"clearUserProperties\",\"setGroup\",\"logRevenueV2\",\"regenerateDeviceId\",\"logEventWithTimestamp\",\"logEventWithGroups\",\"setSessionId\",\"resetSessionId\"]\n  ;function v(e){function t(t){e[t]=function(){\n  e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}\n  for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){\n  e=(!e||e.length===0?\"$default_instance\":e).toLowerCase()\n  ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}\n  ;e.amplitude=n})(window,document);\n\n  amplitude.getInstance().init({{amplitude_project_id}});\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1545497098736",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "tagId": "4",
+                "name": "Amplitude - event - Add to cart",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    'View page',\n    \n  // Event properties\n    {{amplitude_user_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1545497211937",
+                "firingTriggerId": [
+                    "9"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "tagId": "5",
+                "name": "Amplitude - event - Complete transaction",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    'Complete transaction',\n    \n  // Event properties\n    {{amplitude_user_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1545497279582",
+                "firingTriggerId": [
+                    "8"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "tagId": "1",
+                "name": "Amplitude - event - TEMPLATE",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    '',\n    \n  // Event properties\n    {{amplitude_user_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1545496338190",
+                "tagFiringOption": "ONCE_PER_EVENT"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "tagId": "3",
+                "name": "Amplitude - event - View page",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    'View page',\n    \n  // Event properties\n    {{amplitude_user_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1545497179484",
+                "firingTriggerId": [
+                    "5"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT"
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "triggerId": "9",
+                "name": "add_to_cart",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "add_to_cart"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545497036178"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "triggerId": "5",
+                "name": "all_pages_pageview_not_recorded_wl",
+                "type": "WINDOW_LOADED",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{DL_amplitude_pageview_recorded}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            },
+                            {
+                                "type": "BOOLEAN",
+                                "key": "negate",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545497169311"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "triggerId": "8",
+                "name": "cart_validated_page_domready",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{DL_page_name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "cart_validated"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545497013738"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "triggerId": "7",
+                "name": "home_page_domready",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{DL_page_name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "home"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545496988500"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "triggerId": "6",
+                "name": "product_page_domready",
+                "type": "DOM_READY",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{DL_page_name}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "product"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545496962679"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "22",
+                "name": "DL_active_ab_tests",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "active_ab_tests"
+                    }
+                ],
+                "fingerprint": "1545498276912",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "6",
+                "name": "DL_amplitude_pageview_recorded",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "amp_pageview_recorded"
+                    }
+                ],
+                "fingerprint": "1545497615046",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "8",
+                "name": "DL_cart_product_skus",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "cart_product_skus"
+                    }
+                ],
+                "fingerprint": "1545497644508",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "9",
+                "name": "DL_cart_shipping_amount",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "cart_shipping_amount"
+                    }
+                ],
+                "fingerprint": "1545497662046",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "11",
+                "name": "DL_cart_total_amount",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "cart_total_amount"
+                    }
+                ],
+                "fingerprint": "1545497769742",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "10",
+                "name": "DL_cart_total_revenue",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "cart_total_revenue"
+                    }
+                ],
+                "fingerprint": "1545497689043",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "17",
+                "name": "DL_category_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "category_id"
+                    }
+                ],
+                "fingerprint": "1545497960879",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "18",
+                "name": "DL_category_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "category_name"
+                    }
+                ],
+                "fingerprint": "1545497981085",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "19",
+                "name": "DL_event_trigger",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_trigger"
+                    }
+                ],
+                "fingerprint": "1545498058741",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "21",
+                "name": "DL_is_internal_ip",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "is_internal_ip"
+                    }
+                ],
+                "fingerprint": "1545498196619",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "7",
+                "name": "DL_page_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_name"
+                    }
+                ],
+                "fingerprint": "1545496953187",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "16",
+                "name": "DL_page_title",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "page_title"
+                    }
+                ],
+                "fingerprint": "1545497937625",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "20",
+                "name": "DL_platform_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "platform_id"
+                    }
+                ],
+                "fingerprint": "1545498175039",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "12",
+                "name": "DL_product_brand",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "product_brand"
+                    }
+                ],
+                "fingerprint": "1545497794457",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "13",
+                "name": "DL_product_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "product_name"
+                    }
+                ],
+                "fingerprint": "1545497818418",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "14",
+                "name": "DL_product_price",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "product_price"
+                    }
+                ],
+                "fingerprint": "1545497848772",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "15",
+                "name": "DL_product_sku",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "product_sku"
+                    }
+                ],
+                "fingerprint": "1545497870308",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "1",
+                "name": "DL_user_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_id"
+                    }
+                ],
+                "fingerprint": "1545496373050",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "3",
+                "name": "amplitude_event_properties",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  // Data manipulation\n  amplitude_event_type = {{DL_amplitude_pageview_recorded}} == 'true' ? 'client_side' : 'pageview';\n\n  // Add your event properties below (!! A-Z order !!)\n\tvar ep = {\n      \n      'cart_product_skus' : {{DL_cart_product_skus}},\n      'cart_total_amount' : {{DL_cart_total_amount}},\n      'cart_total_revenue' : {{DL_cart_total_revenue}},\n      'cart_shipping_amount' : {{DL_cart_shipping_amount}},\n        \n      'category_id': {{DL_category_id}},\n      'category_name': {{DL_category_name}},\n        \n      'event_trigger' : {{DL_event_trigger}},\n        \n      'page_name': {{DL_page_name}},\n      'page_title' : {{DL_page_title}},\n        \n      'product_brand' : {{DL_product_brand}},\n      'product_name' : {{DL_product_name}},\n      'product_price': {{DL_product_price}},\n      'product_sku' : {{DL_product_sku}},\n        \n\t  // meta properties, used for debugging and QA\n      '_amplitude_event_type': amplitude_event_type,\n      '_gtm_container_version': {{Container Version}},\n      '_environment': {{environment}}\n\n   }\n\n  // Removing null and 0 values to get rid of the noise\n  var event_properties = function(v){for(i in v){ v[i] = (v[i] == null) || (v[i] == 'null') || (v[i] == 0) ? '' : v[i];} return v;}(ep);\n\n  return event_properties;\n}"
+                    }
+                ],
+                "fingerprint": "1545498043897",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "5",
+                "name": "amplitude_project_id",
+                "type": "smm",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "true"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "input",
+                        "value": "{{environment}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "defaultValue",
+                        "value": "87654321"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "map",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "key",
+                                        "value": "production"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "12345678"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1545497310801",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "2",
+                "name": "amplitude_user_properties",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  // Data manipulation\n  var is_logged_in = {{DL_user_id}} != \"\" ? true : false;\n\n  // Define user properties object\n  var user_properties = {\n    'is_logged_in' : is_logged_in,\n    'is_internal_ip' : {{DL_is_internal_ip}},\n    'platform_id' : {{DL_platform_id}}\n };\n\n  // Plug-in all ab tests from the BO tool\n  var ab_tests = {{DL_active_ab_tests}};\n  for (var ab in ab_tests){\n    if(ab_tests.hasOwnProperty(ab)){\n       user_properties['ab_'+ab] = ab_tests[ab]; \n    }\n  }\n\n  return user_properties;\n}"
+                    }
+                ],
+                "fingerprint": "1545498158377",
+                "formatValue": {}
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "variableId": "4",
+                "name": "environment",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function(){\n  return 'production';\n}"
+                    }
+                ],
+                "fingerprint": "1545496533310",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "4611817526",
+                "containerId": "10693979",
+                "type": "CONTAINER_VERSION",
+                "name": "Container Version"
+            }
+        ],
+        "fingerprint": "0",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/4611817526/containers/10693979/versions/0?apiLink=version"
+    }
+}
