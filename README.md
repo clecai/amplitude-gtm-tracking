@@ -2,7 +2,7 @@
 
 Do you want to implement Amplitude using Google Tag Manager (GTM)? You have knocked at the right door.
 
-This repository contains json files and a few notes detailing the implementation of Amplitude tracking (https://amplitude.com/) through Google Tag Manager or GTM (https://tagmanager.google.com/) as I initially intended it for the company I work for, ManoMano (www.manomano.fr).
+This repository contains json files and a few notes detailing the implementation of [Amplitude](https://amplitude.com/)  tracking through [Google Tag Manager or GTM](https://tagmanager.google.com/) as I initially intended it for the company I work for, [ManoMano](www.manomano.fr).
 
 ## Our approach to tracking
 Presiding over our implementation of Amplitude through GTM, we have defined 4 guiding principles (AAAA) around what tracking should be :
@@ -24,27 +24,38 @@ We want to build a tracking system that's above all passing trends and hot new t
 Before you start implementing, you should feel comfortable with the dataLayer and the sequences of events happening when a webpage is loaded (pageview, DOM ready, window loaded).*
 
 You can download *amplitude_gtm_tracking_container.json* and import it on GTM. It contains, by order of importance :
-- `Amplitude — SDK`, a tag that is executed on All Pages (at pageview) and loads the necessary functions for Amplitude to 
-- `amplitude_project_id`, a lookup variable, which contains the ids of the Amplitude projects you will be sending data to.
-- `amplitude_event_properties`, a js object containing all the event variables that we will be sending to Amplitude.
-- `amplitude_user_properties`, a js object containing all the user variables that we will be sending to Amplitude.
+- `Amplitude — SDK`, a tag that is executed on All Pages (at pageview) and loads the necessary functions for Amplitude to work. 
+- `amplitude_project_id`, a lookup variable, which contains the ids of the Amplitude projects we will be sending data to.
+- `amplitude_event_properties`, a js object containing all the event-related variables that we will be sending to Amplitude.
+- `amplitude_user_properties`, a js object containing all the user-related variables that we will be sending to Amplitude.
 work.
 - `Amplitude - event - TEMPLATE`, a tag with no trigger, which you should copy each time you want to add a new event. It contains the code that is executed each time you collect an event and send it to Amplitude. Note how it ends with a property (`'amp_pageview_recorded:true'`) being sent to the dataLayer. We will come back to this.
 - `Amplitude - event - View page`, a tag triggered each time the window is loaded without the dataLayer containing the property `'amp_pageview_recorded:true'`.
 - 4 other `Amplitude - event` tags, which collect data at specific stages of a classic e-commerce funnel.
+- 5 triggers defining the stages of a classic e-commerce funnel (both server-side and client-side).
 - 18 variables starting with `DL_`, which are dataLayer variables.
-- 5 triggers defining the stages of a classic e-commerce funnel (both server-side and client-side triggers).
 
+## Sidenote 1: understanding how Amplitude events work
+Amplitude is an event-based tracking solution. Each event is basically an HTTP request that carries 4 informations: 
+1. the event name
+2. the user id
+3. a json payload containing event-related variables
+4. another json payload containing user-related variables
 
+Purely in terms of data it works kind of like events on Google Analytics do, with the notable exception that **you can pass up to 2K variables to an event.** For us, it meant that, at first, we didn't need to worry about which variables should be sent to which events, we could basically send them all. This was step one in simplifying the process of adding new events to the tracking plan.
 
-## How to track a new event
+## Sidenote 2: Leveraging the dataLayer
+You will notice that our implementation depends greatly on Google Tag Manager's dataLayer. Our aim is to have the data we collect transition through the dataLayer to GTM and feeding Amplitude with as few efforts as possible. This was step two of reducing friction in improving our tracking.
+
+Most of the variables we collect — like `product_sku` or `product_price` — are updated at different stage of our funnel — when a product page is loaded or on an add-to-cart event on the category page for instance —, using the dataLayer we only need to connect them once for them to be sent to Amplitude.
+
+## How it all fits together
+A picture is worth a thousand words
+
+## Collecting all pageviews without double-counting them
+
+## Monitoring and QA-ing your tracking
 foobar
-
-## How to QA your tracking
-foobar
-
-## About Amplitude
-foobar 
 
 ## About Google Tag Manager
 foobar
