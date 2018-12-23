@@ -50,7 +50,11 @@ You will notice that our implementation depends greatly on Google Tag Manager's 
 Most of the variables we collect — like `product_sku` or `product_price` — are updated at different stages of our funnel — when a product page is loaded or on an add-to-cart event on the category page for instance —, using the dataLayer we only need to connect them once for them to be sent to Amplitude.
 
 ## Collecting server-side events (pageviews)
-A picture is worth a thousand words, so let me illustrates what happens when the user take:
+A picture is worth a thousand words, so let me illustrates what happens when we collect the "View category page" event:
+
+[[https://github.com/clecai/amplitude_gtm_tracking/img/figure1.svg|alt=figure1]]
+
+
 
 ## Collecting client-side events (bound to js/ajax callbacks)
 
