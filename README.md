@@ -52,7 +52,7 @@ Most of the variables we collect — like `product_sku` or `product_price` — a
 ## Collecting server-side events (pageviews)
 A picture is worth a thousand words, so let me illustrates what happens when we collect the "View category page" event:
 
-[[https://github.com/clecai/amplitude_gtm_tracking/img/figure1.svg|alt=figure1]]
+[[https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure1.svg|alt=figure1]]
 
 
 
