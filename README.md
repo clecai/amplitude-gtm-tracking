@@ -2,7 +2,7 @@
 
 Do you want to implement Amplitude using Google Tag Manager (GTM)? You have knocked at the right door.
 
-This repository contains json files and a few notes detailing the implementation of [Amplitude](https://amplitude.com/)  tracking through [Google Tag Manager (GTM)](https://tagmanager.google.com/) as I initially intended it for the company I work for, [ManoMano](https://www.manomano.fr).
+This repository contains json files and a few notes detailing the implementation of [Amplitude](https://amplitude.com/)  tracking through [Google Tag Manager (GTM)](https://tagmanager.google.com/) as I initially intended it for the company I work for, [ManoMano](https://www.manomano.fr). Want to know more about our tracking philosophy ? You can read our [tracking principles here](https://github.com/clecai/amplitude-gtm-tracking/blob/master/tracking_principles.md).
 
 
 ## About this repository
