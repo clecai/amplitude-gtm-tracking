@@ -50,15 +50,28 @@ You will notice that our implementation depends greatly on Google Tag Manager's 
 Most of the variables we collect — like `product_sku` or `product_price` — are updated at different stages of our funnel — when a product page is loaded or on an add-to-cart event on the category page for instance —, using the dataLayer we only need to connect them once for them to be sent to Amplitude.
 
 ## Collecting server-side events (pageviews)
-A picture is worth a thousand words, so let me illustrates what happens when we collect the "View category page" event:
+A picture is worth a thousand words, so let me illustrate what happens when we collect the "View category page" event:
 
-[[https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure1.svg|alt=figure1]]
+![Amplitude GTM implementation Figure 1](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure1.svg)
 
 
 
 ## Collecting client-side events (bound to js/ajax callbacks)
+![Amplitude GTM implementation Figure 2](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure2.svg)
+
+Now what happens when the user performs multiple client side events ?:
+![Amplitude GTM implementation Figure 3](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure3.svg)
 
 ## Collecting all pageviews without double-counting them
+Early-on in our implementation we bumped into a bit of a conundrum: how could we record all pageview events while at the same time being able to tell the main pageview events appart from the rest? The solution was afforded by the sequence of events happening when a the server renders the page.
+
+Here is what happens when we want to collect a specific pageview (complete with its own event name):
+
+![Amplitude GTM implementation Figure 4](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure4.svg)
+
+And here is what happens when we haven't collected any pageview and the server finishes to render the page:
+
+![Amplitude GTM implementation Figure 5](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure5.svg)
 
 ## Monitoring and QA-ing your tracking
 foobar
