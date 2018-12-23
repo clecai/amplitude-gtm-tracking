@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2018-12-22 22:20:37",
+    "exportTime": "2018-12-23 13:49:46",
     "containerVersion": {
         "path": "accounts/4611817526/containers/10693979/versions/0",
         "accountId": "4611817526",
@@ -318,32 +318,6 @@
             }
         ],
         "variable": [
-            {
-                "accountId": "4611817526",
-                "containerId": "10693979",
-                "variableId": "22",
-                "name": "DL_active_ab_tests",
-                "type": "v",
-                "parameter": [
-                    {
-                        "type": "INTEGER",
-                        "key": "dataLayerVersion",
-                        "value": "2"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "setDefaultValue",
-                        "value": "false"
-                    },
-                    {
-                        "type": "TEMPLATE",
-                        "key": "name",
-                        "value": "active_ab_tests"
-                    }
-                ],
-                "fingerprint": "1545498276912",
-                "formatValue": {}
-            },
             {
                 "accountId": "4611817526",
                 "containerId": "10693979",
@@ -796,10 +770,10 @@
                     {
                         "type": "TEMPLATE",
                         "key": "javascript",
-                        "value": "function() {\n  // Data manipulation\n  amplitude_event_type = {{DL_amplitude_pageview_recorded}} == 'true' ? 'client_side' : 'pageview';\n\n  // Add your event properties below (!! A-Z order !!)\n\tvar ep = {\n      \n      'cart_product_skus' : {{DL_cart_product_skus}},\n      'cart_total_amount' : {{DL_cart_total_amount}},\n      'cart_total_revenue' : {{DL_cart_total_revenue}},\n      'cart_shipping_amount' : {{DL_cart_shipping_amount}},\n        \n      'category_id': {{DL_category_id}},\n      'category_name': {{DL_category_name}},\n        \n      'event_trigger' : {{DL_event_trigger}},\n        \n      'page_name': {{DL_page_name}},\n      'page_title' : {{DL_page_title}},\n        \n      'product_brand' : {{DL_product_brand}},\n      'product_name' : {{DL_product_name}},\n      'product_price': {{DL_product_price}},\n      'product_sku' : {{DL_product_sku}},\n        \n\t  // meta properties, used for debugging and QA\n      '_amplitude_event_type': amplitude_event_type,\n      '_gtm_container_version': {{Container Version}},\n      '_environment': {{environment}}\n\n   }\n\n  // Removing null and 0 values to get rid of the noise\n  var event_properties = function(v){for(i in v){ v[i] = (v[i] == null) || (v[i] == 'null') || (v[i] == 0) ? '' : v[i];} return v;}(ep);\n\n  return event_properties;\n}"
+                        "value": "function() {\n  // Data manipulation\n  amplitude_event_type = {{DL_amplitude_pageview_recorded}} == 'true' ? 'client_side' : 'pageview';\n\n  // Add your event properties below (!! A-Z order !!)\n\tvar ep = {\n      \n      'cart_product_skus' : {{DL_cart_product_skus}},\n      'cart_total_amount' : {{DL_cart_total_amount}},\n      'cart_total_revenue' : {{DL_cart_total_revenue}},\n      'cart_shipping_amount' : {{DL_cart_shipping_amount}},\n        \n      'category_id': {{DL_category_id}},\n      'category_name': {{DL_category_name}},\n        \n      'event_trigger' : {{DL_event_trigger}},\n        \n      'page_name': {{DL_page_name}},\n      'page_title' : {{DL_page_title}},\n        \n      'product_brand' : {{DL_product_brand}},\n      'product_name' : {{DL_product_name}},\n      'product_price': {{DL_product_price}},\n      'product_sku' : {{DL_product_sku}},\n        \n\t  // meta properties, used for debugging and QA\n      '_amplitude_event_type': amplitude_event_type,\n      '_gtm_container_version': {{Container Version}},\n      '_environment': {{environment}}\n\n   }\n\n  // Removing all properties set to null or 0, to get rid of the noise\n  var event_properties = function(v){\n    for(i in v){ if(v.hasOwnProperty(i)){ \n        if((v[i] == null) || (v[i] == 'null') || (v[i] == 0)){delete v[i];} \n        else {v[i] = v[i];}}} \n   return v;}(ep);\n\n  return event_properties;\n}"
                     }
                 ],
-                "fingerprint": "1545498043897",
+                "fingerprint": "1545572971095",
                 "formatValue": {}
             },
             {
@@ -859,10 +833,10 @@
                     {
                         "type": "TEMPLATE",
                         "key": "javascript",
-                        "value": "function() {\n  // Data manipulation\n  var is_logged_in = {{DL_user_id}} != \"\" ? true : false;\n\n  // Define user properties object\n  var user_properties = {\n    'is_logged_in' : is_logged_in,\n    'is_internal_ip' : {{DL_is_internal_ip}},\n    'platform_id' : {{DL_platform_id}}\n };\n\n  // Plug-in all ab tests from the BO tool\n  var ab_tests = {{DL_active_ab_tests}};\n  for (var ab in ab_tests){\n    if(ab_tests.hasOwnProperty(ab)){\n       user_properties['ab_'+ab] = ab_tests[ab]; \n    }\n  }\n\n  return user_properties;\n}"
+                        "value": "function() {\n  // Data manipulation\n  var is_logged_in = {{DL_user_id}} != \"\" ? true : false;\n\n  // Define user properties object\n  var user_properties = {\n    'is_logged_in' : is_logged_in,\n    'is_internal_ip' : {{DL_is_internal_ip}},\n    'platform_id' : {{DL_platform_id}}\n };\n\n  return user_properties;\n}"
                     }
                 ],
-                "fingerprint": "1545498158377",
+                "fingerprint": "1545563169276",
                 "formatValue": {}
             },
             {
