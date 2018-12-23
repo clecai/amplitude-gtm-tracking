@@ -39,18 +39,20 @@ work.
 Amplitude is an event-based tracking solution. Each event is basically an HTTP request that carries 4 informations: 
 1. the event name
 2. the user id
-3. a json payload containing event-related variables
-4. another json payload containing user-related variables
+3. a json object containing event-related variables
+4. another json object containing user-related variables
 
-Purely in terms of data it works kind of like events on Google Analytics do, with the notable exception that **you can pass up to 2K variables to an event.** For us, it meant that, at first, we didn't need to worry about which variables should be sent to which events, we could basically send them all. This was step one in simplifying the process of adding new events to the tracking plan.
+Purely in terms of data it works kind of like events on Google Analytics do, with the notable exception that **you can pass up to 2K variables to an event.** For us, it meant that, at first, we needn't worry about which variables should be sent to which events, we could basically send them all. This was step 1 in simplifying the process of adding new events to the tracking plan.
 
 ## Sidenote 2: Leveraging the dataLayer
-You will notice that our implementation depends greatly on Google Tag Manager's dataLayer. Our aim is to have the data we collect transition through the dataLayer to GTM and feeding Amplitude with as few efforts as possible. This was step two of reducing friction in improving our tracking.
+You will notice that our implementation depends greatly on Google Tag Manager's dataLayer. Our aim is to have the data we collect transition through the dataLayer to GTM and feed Amplitude with as few efforts as possible. This was step 2 in reducing friction in improving our tracking.
 
-Most of the variables we collect — like `product_sku` or `product_price` — are updated at different stage of our funnel — when a product page is loaded or on an add-to-cart event on the category page for instance —, using the dataLayer we only need to connect them once for them to be sent to Amplitude.
+Most of the variables we collect — like `product_sku` or `product_price` — are updated at different stages of our funnel — when a product page is loaded or on an add-to-cart event on the category page for instance —, using the dataLayer we only need to connect them once for them to be sent to Amplitude.
 
-## How it all fits together
-A picture is worth a thousand words
+## Collecting server-side events (pageviews)
+A picture is worth a thousand words, so let me illustrates what happens when the user take:
+
+## Collecting client-side events (bound to js/ajax callbacks)
 
 ## Collecting all pageviews without double-counting them
 
