@@ -15,11 +15,11 @@ You can download [*amplitude_gtm_tracking_container.json*](https://github.com/cl
 - `amplitude_event_properties`, a js object containing all the event-related variables that we will be sending to Amplitude.
 - `amplitude_user_properties`, a js object containing all the user-related variables that we will be sending to Amplitude.
 work.
-- `Amplitude - event - TEMPLATE`, a tag with no trigger, which you should copy each time you want to add a new event. It contains the code that is executed each time you collect an event and send it to Amplitude. Note how it ends with a property (`'amp_pageview_recorded:true'`) being sent to the dataLayer. We will come back to this.
-- `Amplitude - event - View page`, a tag triggered each time the window is loaded without the dataLayer containing the property `'amp_pageview_recorded:true'`.
-- 4 other `Amplitude - event` tags, which collect data at specific stages of a classic e-commerce funnel.
-- 5 triggers defining the stages of a classic e-commerce funnel (both server-side and client-side).
-- 18 variables starting with `DL_`, which are dataLayer variables.
+- `Amplitude - event - TEMPLATE`, a tag with no trigger, which you should copy each time you want to add a new event. It contains the code that is executed each time you collect an event and send it to Amplitude.
+- `Amplitude - Generic event - View page`, this tag enables the collection of all pageviews, it is triggered on window-loaded if no other pageview event has been collected.
+- 3 other `Amplitude - event` tags, which collect data at specific stages of a classic e-commerce funnel.
+- 4 triggers defining the stages of a classic e-commerce funnel (both server-side and client-side).
+- 9 variables starting with `DL_`, which are dataLayer variables.
 
 ## Sidenote 1: understanding how Amplitude events work
 Amplitude is an event-based tracking solution. Each event is basically an HTTP request that carries 4 informations: 
@@ -36,17 +36,39 @@ You will notice that our implementation depends greatly on Google Tag Manager's 
 Most of the variables we collect — like `product_sku` or `product_price` — are updated at different stages of our funnel — when a product page is loaded or on an add-to-cart event on the category page for instance —, using the dataLayer we only need to connect them once for them to be sent to Amplitude.
 
 ## Collecting server-side events (pageviews)
-A picture is worth a thousand words, so let me illustrate what happens when we collect the "View category page" event:
+The first thing that you will likely want to do is to collect pageviews (like the example `View category page`), which is a server-side event. Let see what happens when the page loads:
 
 ![Amplitude GTM implementation Figure 1](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure1.svg)
 
+On the first available trigger, `Page View`, we load Amplitude's SDK, this enables data collection and loads all necessary functions.
+
+Then on the second available trigger, `DOM ready`, we execute the event tag which sends data to Amplitude in the form of two js objects: amplitude_event_properties (E) and amplitude_user_properties (U). 
+
+As you can see above, these objects (E) and (U) gather data from the dataLayer: **which means that you first have to send data to the dataLayer (that's usually done by a front-end developper)**
 
 
 ## Collecting client-side events (bound to js/ajax callbacks)
+Now the second type of events that you will likely want to track are client-side events, generally executed on the user's browser through javascript. Below, I've illustrated what happens the user lands on a category page and they perform an add-to-cart event:
+
 ![Amplitude GTM implementation Figure 2](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure2.svg)
 
-Now what happens when the user performs multiple client side events ?:
-![Amplitude GTM implementation Figure 3](https://github.com/clecai/amplitude-gtm-tracking/blob/master/img/figure3.svg)
+The page is loaded and as we have seen previously a pageview event is collected, then the user performs a client-side action and another event is sent to Amplitude along with event and user properties.
+
+Here too, we are relying on the dataLayer to funnel data to Amplitude, **and also** to trigger the event at the appropriate time. Indeed, as is very well documented in [this AnalyticsMania post](https://www.analyticsmania.com/post/google-tag-manager-custom-event-trigger/), one of the main pitfalls of GTM is to trigger events on clicks made by the user (but they can be tricky). 
+
+At ManoMano we use gtm custom events, implemented by front-end developpers in our code like so:
+
+```
+ window.dataLayer = window.dataLayer || [];
+ window.dataLayer.push({
+   'event': 'add_to_cart',
+   'page_name': <your_page_name>,
+   'page_title': <your_page_title>,
+   'product_sku': <your_product_sku>,
+   'product_price': <your_product_price>
+ });
+```
+This data push is bound to an ajax callback, so we know we are only sending data when we are 100% sure the event happen. Then GTM sees an `add_to_cart` trigger and in turn sends data to Amplitude.
 
 ## Collecting all pageviews without double-counting them
 Early-on in our implementation we bumped into a bit of a conundrum: how could we record all pageview events while at the same time being able to tell the main pageview events appart from the rest? The solution was afforded by the sequence of events happening when a the server renders the page.
