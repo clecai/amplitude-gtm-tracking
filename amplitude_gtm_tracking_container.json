@@ -1,12 +1,11 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2018-12-28 12:35:52",
+    "exportTime": "2018-12-28 12:52:09",
     "containerVersion": {
-        "path": "accounts/4611817526/containers/10693979/versions/1",
+        "path": "accounts/4611817526/containers/10693979/versions/0",
         "accountId": "4611817526",
         "containerId": "10693979",
-        "containerVersionId": "1",
-        "name": "Amplitude + GTM implementation",
+        "containerVersionId": "0",
         "container": {
             "path": "accounts/4611817526/containers/10693979",
             "accountId": "4611817526",
@@ -16,7 +15,7 @@
             "usageContext": [
                 "WEB"
             ],
-            "fingerprint": "1546000484607",
+            "fingerprint": "1546000538451",
             "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/4611817526/containers/10693979/workspaces?apiLink=container"
         },
         "tag": [
@@ -146,13 +145,13 @@
                 "accountId": "4611817526",
                 "containerId": "10693979",
                 "tagId": "7",
-                "name": "Amplitude - event - View product page",
+                "name": "Amplitude - event - View category page",
                 "type": "html",
                 "parameter": [
                     {
                         "type": "TEMPLATE",
                         "key": "html",
-                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    'View product page',\n    \n  // Event properties\n\t{{amplitude_event_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
+                        "value": "<script>\n  // Set user id\n  amplitude.getInstance().setUserId('{{DL_user_id}}');\n  \n  // Set user properties\n  amplitude.getInstance().setUserProperties({{amplitude_user_properties}});\n  \n  // Set event\n  amplitude.getInstance().logEvent(\n    \n  // Write your event name here\n    'View category page',\n    \n  // Event properties\n\t{{amplitude_event_properties}}\n  );\n  \n  // Prevent double counting events\n  window.dataLayer = window.dataLayer || [];\n  window.dataLayer.push({'amp_pageview_recorded': 'true'});\n</script>\n"
                     },
                     {
                         "type": "BOOLEAN",
@@ -160,7 +159,7 @@
                         "value": "false"
                     }
                 ],
-                "fingerprint": "1546000458482",
+                "fingerprint": "1546001518072",
                 "firingTriggerId": [
                     "6"
                 ],
@@ -230,7 +229,7 @@
                 "accountId": "4611817526",
                 "containerId": "10693979",
                 "triggerId": "6",
-                "name": "product_page_domready",
+                "name": "category_page_domready",
                 "type": "DOM_READY",
                 "filter": [
                     {
@@ -244,12 +243,12 @@
                             {
                                 "type": "TEMPLATE",
                                 "key": "arg1",
-                                "value": "product"
+                                "value": "category"
                             }
                         ]
                     }
                 ],
-                "fingerprint": "1546000474448",
+                "fingerprint": "1546001513573",
                 "parentFolderId": "13"
             },
             {
@@ -691,7 +690,7 @@
                 "name": "Container Version"
             }
         ],
-        "fingerprint": "1546000538390",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/4611817526/containers/10693979/versions/1?apiLink=version"
+        "fingerprint": "0",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/4611817526/containers/10693979/versions/0?apiLink=version"
     }
 }
